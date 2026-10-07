@@ -60,6 +60,26 @@ status = 200`);
   })
   .join("\n");
 
+// Preserve incoming course links after moving the course out of talks/.
+const migratedCourseRedirects = `
+# This course now lives in the teachings repository.
+[[redirects]]
+from = "/deep-pde/assets/deep-pde.pdf"
+to = "https://zheng-teachings.netlify.app/ai4pde/assets/ai4pde.pdf"
+status = 302
+force = true
+
+[[redirects]]
+from = "/deep-pde"
+to = "https://zheng-teachings.netlify.app/ai4pde/"
+status = 302
+
+[[redirects]]
+from = "/deep-pde/*"
+to = "https://zheng-teachings.netlify.app/ai4pde/:splat"
+status = 302
+`;
+
 const content = `
 [build]
 publish = "dist"
@@ -75,6 +95,8 @@ command = "bun --bun run build"
     Cache-Control = "public, max-age=3600"
 
 ${redirects}
+
+${migratedCourseRedirects}
 
 [[redirects]]
 from = "/"

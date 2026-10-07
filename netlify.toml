@@ -144,23 +144,25 @@ to = "https://github.com/mazhengcn/talks/tree/main/talks/2026-07-29"
 status = 302
 
 [[redirects]]
-from = "/deep-pde/pdf"
-to = "/deep-pde/slides.pdf"
+from = "/deeprte/src"
+to = "https://github.com/mazhengcn/talks/tree/main/talks/deeprte"
 status = 302
 
+# This course now lives in the teachings repository.
 [[redirects]]
-from = "/deep-pde/src"
-to = "https://github.com/mazhengcn/talks/tree/main/talks/deep-pde"
+from = "/deep-pde/assets/deep-pde.pdf"
+to = "https://zheng-teachings.netlify.app/ai4pde/assets/ai4pde.pdf"
+status = 302
+force = true
+
+[[redirects]]
+from = "/deep-pde"
+to = "https://zheng-teachings.netlify.app/ai4pde/"
 status = 302
 
 [[redirects]]
 from = "/deep-pde/*"
-to = "/deep-pde/index.html"
-status = 200
-
-[[redirects]]
-from = "/deeprte/src"
-to = "https://github.com/mazhengcn/talks/tree/main/talks/deeprte"
+to = "https://zheng-teachings.netlify.app/ai4pde/:splat"
 status = 302
 
 [[redirects]]

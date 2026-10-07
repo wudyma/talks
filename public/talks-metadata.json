@@ -1,6 +1,6 @@
 {
   "generatedAt": "2026-08-28T03:29:08.094Z",
-  "count": 12,
+  "count": 11,
   "talks": [
     {
       "id": "deeprte",
@@ -241,31 +241,6 @@
       "published": true,
       "custom": {
         "version": "v1.0.0"
-      }
-    },
-    {
-      "id": "deep-pde",
-      "title": "深度学习与微分方程",
-      "date": "2025-07-24",
-      "conference": "深度学习与科学计算暑期课程",
-      "location": "上海, 中国",
-      "language": "zh-CN",
-      "slidesUrl": "https://zheng-talks.netlify.app/deep-pde/",
-      "pdfUrl": "https://zheng-talks.netlify.app/deep-pde/slides.pdf",
-      "sourceUrl": "https://github.com/mazhengcn/talks/tree/main/talks/deep-pde",
-      "description": "深度学习与微分方程：从入门到精通 - 介绍深度学习方法求解微分方程的基本概念、常见算法和实践应用",
-      "tags": [
-        "deep-learning",
-        "differential-equations",
-        "pde",
-        "scientific-computing",
-        "tutorial"
-      ],
-      "collaborators": [],
-      "published": true,
-      "custom": {
-        "language": "zh-CN",
-        "course": true
       }
     },
     {
