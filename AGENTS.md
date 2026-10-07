@@ -1,6 +1,6 @@
 # AGENTS.md
 
-This file provides guidance to AI coding agents (Claude Code, Codex, and other AGENTS.md-compatible tools) when working with code in this repository.
+This file provides guidance to coding agents working in this repository.
 
 ## Project overview
 
@@ -31,16 +31,9 @@ There are no tests in this repo.
 
 ### MCP server
 
-Slidev exposes an MCP (Model Context Protocol) server at the dev server's `/__mcp` endpoint. This lets AI coding agents interact with a running presentation directly — navigating slides, reading slide content, and more.
+Slidev exposes an MCP (Model Context Protocol) server at the dev server's `/__mcp` endpoint. An MCP-capable agent can connect to `http://localhost:3030/__mcp` to navigate slides and read or edit slide content.
 
-Register the MCP server with:
-
-```bash
-claude mcp add --transport http slidev http://localhost:3030/__mcp  # Claude Code
-codex mcp add --transport http slidev http://localhost:3030/__mcp   # Codex
-```
-
-The Slidev dev server must be running (via `bun run dev`) for the MCP server to be reachable. If the dev server is on a different port, adjust the URL accordingly.
+The Slidev dev server must be running (via `bun run dev`) for the MCP server to be reachable. If the dev server is on a different port, adjust the URL accordingly. See the [MCP reference](.agents/skills/slidev/references/tool-mcp.md) for the standalone stdio option.
 
 ## Architecture
 
@@ -126,13 +119,14 @@ A GitHub Action (`.github/workflows/update-metadata.yml`) runs `collect-metadata
 
 ### TypeScript config
 
-`tsconfig.json` targets `esnext` with `module: "esnext"`, uses `bundler` module resolution, `noEmit: true`, `allowImportingTsExtensions: true`, `allowSyntheticDefaultImports: true`. Excludes markdown files and `dist-stale`/`dist` directories.
+`tsconfig.json` targets `esnext` with `module: "esnext"`, uses `bundler` module resolution, `noEmit: true`, `allowImportingTsExtensions: true`, `allowSyntheticDefaultImports: true`. Excludes markdown files and `dist` directories.
 
 `types.d.ts` declares an ambient module for `.css` imports so TypeScript doesn't error on CSS side-effect imports.
 
 ### Other directories
 
 - **`fonts/`** — local font files for offline use/caching (used by `presetWebFonts` with `createLocalFontProcessor()`)
+- **`.agents/skills/`** — shared repository skills, with one directory per skill
 - **`.devcontainer/`** — VS Code Dev Container configuration for reproducible development environments
 - **`dist/`** — ignored production output containing each published SPA, its generated `slides.pdf`, and the metadata collection
 - **`shared-assets/`** — canonical large assets shared through per-talk `public/` symlinks; Vite materializes them into each production build
@@ -143,8 +137,22 @@ No `.env` files exist. The only env var used is `BASE_URL` (in `collect-metadata
 
 ## Project skills
 
-### slidev (`/slidev`)
+Skills and their references live under `.agents/skills/`. Read only the skills
+needed for the task; use their linked references for conditional detail.
 
-Comprehensive Slidev reference skill for creating and editing presentations. Covers Markdown syntax, frontmatter, animations, code highlighting, diagrams (Mermaid/PlantUML/LaTeX), layouts, presenter tools, and export/build options. Invoke via `/slidev` or use `Skill` tool with `slidev` when working on `slides.md` files.
+| Skill                                                                  | When to read it                                                                  |
+| ---------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| [slidev](.agents/skills/slidev/SKILL.md)                               | Creating/editing Slidev content, configuring features, building, or exporting    |
+| [slidev-best-practices](.agents/skills/slidev-best-practices/SKILL.md) | New decks, substantial content changes, presentation redesign, or quality review |
+| [frontend-design](.agents/skills/frontend-design/SKILL.md)             | Choosing or revising visual direction, typography, palette, and layout           |
+| [web-design-guidelines](.agents/skills/web-design-guidelines/SKILL.md) | Requested UI/design/accessibility review of slides or custom web components      |
 
-Full reference files live under `.agents/skills/slidev/references/`.
+For a new deck, use `slidev` with `slidev-best-practices`. Use the two design
+skills when their scope is relevant. Keep work in Vue, UnoCSS, and the existing
+Slidev structure; preserve the talk's identity and the user's explicit visual
+preferences. Check the installed Slidev version before using features from newer
+upstream references. Skill updates do not imply dependency upgrades.
+
+Source commits, licenses, local adaptations, and maintenance instructions are
+listed in the [skill inventory](.agents/skills/README.md). `skills-lock.json`
+records pinned upstream refs and installed folder hashes.

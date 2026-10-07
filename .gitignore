@@ -1,8 +1,10 @@
 *.log
 node_modules
 *-export*
+!.agents/skills/**/*.md
 dist
 dist-stale
+/.claude/
 talks/*/assets/*.pdf
 talks/*/assets/*.pptx
 .DS_Store

@@ -43,7 +43,8 @@ interface TalkMetadata {
 - Extracts frontmatter from `slides.md`
 - Loads optional `metadata.json` config
 - Generates URLs based on deployment structure
-- Outputs to `dist/talks-metadata.json` and `public/talks-metadata.json`
+- The metadata CLI writes `public/talks-metadata.json`; production builds write
+  `dist/talks-metadata.json`.
 
 ### 3. Auto-update Workflow
 
@@ -86,7 +87,8 @@ bun run scripts/collect-metadata.ts
 The metadata is available at:
 
 - **Static JSON**: `https://zheng-talks.netlify.app/talks-metadata.json`
-- **Repository**: `dist/talks-metadata.json` and `public/talks-metadata.json`
+- **Repository**: `public/talks-metadata.json`
+- **Build output**: `dist/talks-metadata.json` (ignored by Git)
 
 ## Next.js Integration
 

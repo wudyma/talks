@@ -4,6 +4,17 @@
 
 Slides &amp; code for my talks, using [Slidev](https://sli.dev).
 
+## Development
+
+Use Bun workspaces: `bun install`, then `bun run dev` to select a talk or
+`bun run build` to build published talks from source. Generated sites live in `dist/`
+and are ignored by Git.
+
+Repository guidance lives in [AGENTS.md](./AGENTS.md). Shared skills live under
+`.agents/skills/`: Slidev references, presentation best practices, frontend
+design, and web design reviews. See the [skill inventory](./.agents/skills/README.md)
+for entry points, pinned upstream versions, and update instructions.
+
 ## 📊 Metadata API
 
 All talks metadata is available as JSON for easy integration with other projects:

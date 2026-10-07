@@ -61,25 +61,29 @@ slidev build slides1.md slides2.md  # Multiple builds
 
 ## Export
 
+The format list below follows current upstream. This repository's Slidev
+52.19.1 supports `pdf`, `png`, `pptx`, and `md`; `pptx-editable` requires a newer
+CLI. Check `bunx slidev export --help` in the target talk before selecting it.
+
 ```bash
 slidev export [entry]
 ```
 
 Options:
 
-| Option              | Default     | Description               |
-| ------------------- | ----------- | ------------------------- |
-| `--output`          | -           | Output filename           |
-| `--format`          | pdf         | pdf / png / pptx / md     |
-| `--timeout`         | 30000       | Timeout per slide (ms)    |
-| `--range`           | -           | Slide range (e.g., 1,4-7) |
-| `--dark`            | false       | Export dark mode          |
-| `--with-clicks`     | false       | Include click steps       |
-| `--with-toc`        | false       | PDF table of contents     |
-| `--wait`            | 0           | Wait ms before export     |
-| `--wait-until`      | networkidle | Wait condition            |
-| `--omit-background` | false       | Transparent background    |
-| `--executable-path` | -           | Browser path              |
+| Option              | Default     | Description                           |
+| ------------------- | ----------- | ------------------------------------- |
+| `--output`          | -           | Output filename                       |
+| `--format`          | pdf         | pdf / png / pptx / pptx-editable / md |
+| `--timeout`         | 30000       | Timeout per slide (ms)                |
+| `--range`           | -           | Slide range (e.g., 1,4-7)             |
+| `--dark`            | false       | Export dark mode                      |
+| `--with-clicks`     | false       | Include click steps                   |
+| `--with-toc`        | false       | PDF table of contents                 |
+| `--wait`            | 0           | Wait ms before export                 |
+| `--wait-until`      | networkidle | Wait condition                        |
+| `--omit-background` | false       | Transparent background                |
+| `--executable-path` | -           | Browser path                          |
 
 Examples:
 

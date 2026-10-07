@@ -14,7 +14,7 @@
     "import/no-unassigned-import": "off",
     "unicorn/consistent-function-scoping": "off"
   },
-  "ignorePatterns": ["dist-stale/**", "dist/**"],
+  "ignorePatterns": ["dist/**"],
   "env": {
     "builtin": true
   }

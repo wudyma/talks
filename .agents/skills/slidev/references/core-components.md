@@ -142,7 +142,13 @@ Props: `controls`, `autoplay`, `autoreset`, `poster`, `timestamp`
 ```md
 <Tweet id="1423789844234231808" />
 <Tweet id="1423789844234231808" :scale="0.8" />
+<Tweet url="https://x.com/antfu7/status/1389604687502995457" />
 ```
+
+Use either `id` or a full `x.com` or `twitter.com` post URL. When both are present, `id` takes precedence.
+
+**Repository compatibility:** Slidev 52.19.1 requires `id`; the `url` prop is
+from newer upstream code. Use `id` until the installed component supports `url`.
 
 ## Conditional
 
@@ -191,7 +197,7 @@ Context values:
 </VDrag>
 ```
 
-See [draggable](draggable.md) for details.
+See [draggable](layout-draggable.md) for details.
 
 ## Component Auto-Import
 

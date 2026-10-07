@@ -47,6 +47,23 @@ const add = () => (count += 1);
 ````
 `````
 
+## Animation Options
+
+`magicMoveDuration` is available in the repository's Slidev 52.19.1. The
+`shiki.magicMove` pass-through below follows newer upstream code; confirm
+support in the installed client before relying on it.
+
+Customize duration globally with `magicMoveDuration` (ms, headmatter). Fine-tune easing, stagger, delays, and diffing behavior via `shiki.magicMove` (headmatter), which is passed through to [Shiki Magic Move](https://shiki.style/packages/magic-move#options):
+
+```yaml
+---
+shiki:
+  magicMove:
+    easing: ease-in-out
+    stagger: 5
+---
+```
+
 ## How It Works
 
 - Wraps multiple code blocks as one

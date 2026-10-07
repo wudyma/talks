@@ -1,11 +1,31 @@
 {
   "version": 1,
   "skills": {
+    "frontend-design": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "ref": "683bc88e56f3e09ba94f7055977f3d3aa499f202",
+      "skillPath": "skills/frontend-design/SKILL.md",
+      "computedHash": "5db70a84ae9d66b6886002c728a31b5a7411d98067813f62ab75157da3a8c3d7"
+    },
     "slidev": {
       "source": "slidevjs/slidev",
       "sourceType": "github",
+      "ref": "73053ab2b9653ed475960301b56e1ce4439d9c75",
       "skillPath": "skills/slidev/SKILL.md",
-      "computedHash": "64746507a65f5cae5386d2fd3acefc7f77edf7c4b60de596d7b1cabec87db11e"
+      "computedHash": "98bb1eb8363934881cc77d84a500f78decdcb25f96ed6938c8003f15ab9a8316"
+    },
+    "slidev-best-practices": {
+      "source": "./.agents/skills/slidev-best-practices",
+      "sourceType": "local",
+      "computedHash": "ad027892666a162d5efe010c4f1247d82c886da3a4724c88d4ae671772467125"
+    },
+    "web-design-guidelines": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "ref": "063bee94c3f4df8453406c830b0a7df0f2860278",
+      "skillPath": "skills/web-design-guidelines/SKILL.md",
+      "computedHash": "e6af267d88801402b9fcd89cb52559fb26e63865a7af7146da69a690b3ca08e5"
     }
   }
 }

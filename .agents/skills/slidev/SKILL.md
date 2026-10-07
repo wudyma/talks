@@ -17,16 +17,60 @@ Web-based slides maker built on Vite, Vue, and Markdown.
 - Export to PDF, PPTX, or host as SPA
 - Code walkthroughs for developer talks or workshops
 
-## Quick Start
+## Repository Workflow
+
+This skill lives in `.agents/skills/slidev/`. Read the repository's
+[AGENTS.md](../../../AGENTS.md) for workspace conventions and use the relative
+`references/` links below for the relevant Slidev features.
+
+For a new deck, substantial content changes, or visual redesign, also read
+[slidev-best-practices](../slidev-best-practices/SKILL.md). It covers narrative,
+projection-friendly design, and checking the rendered result. For visual
+direction, use [frontend-design](../frontend-design/SKILL.md); for a requested UI
+or accessibility review, use [web-design-guidelines](../web-design-guidelines/SKILL.md).
+Load those skills when their role is needed, not for every syntax edit.
+
+## Version Compatibility
+
+The references are synchronized with upstream and can describe features newer
+than the installed CLI. Read the root `package.json` catalog and the target
+talk's installed package before using a new feature. The current repository pin
+is Slidev **52.19.1**. In that version, `pptx-editable` and `<Tweet url="...">`
+are unavailable; use `pptx` and `<Tweet id="...">`. Check `bunx slidev export
+--help` from the talk directory for export formats. A skill refresh does not
+require upgrading Slidev dependencies.
+
+Source commits and local adaptations are recorded in the
+[skill inventory](../README.md) and root `skills-lock.json`.
+
+## Bun Workspace Commands
+
+This repository uses Bun workspaces. Talks live in `talks/<talk-name>/`; create
+new talks from `template/` and adapt the copied package name, scripts, slides,
+and metadata to the new talk.
 
 ```bash
-pnpm create slidev    # Create project
-pnpm run dev          # Start dev server (opens http://localhost:3030)
-pnpm run build        # Build static SPA
-pnpm run export       # Export to PDF (requires playwright-chromium)
+# From the repository root
+bun install
+bun run dev           # Choose a talk and start its dev server
+bun run build         # Build published talks sequentially, then metadata
+bun run metadata      # Update public/talks-metadata.json
+
+# From talks/<talk-name>/
+bun run dev           # Start this talk's dev server
+bun run build         # Build to ../../dist/<talk-name>/
+bun run export        # Export using this talk's package.json script
 ```
 
-**Verify**: After `pnpm run dev`, confirm slides load at `http://localhost:3030`. After `pnpm run export`, check the output PDF exists in the project root.
+Use `bunx slidev` for additional CLI options. Build output in `dist/` is ignored
+by Git. The build script generates both the SPA and `dist/<talk-name>/slides.pdf`
+from source. Root builds include published talks and write `dist/talks-metadata.json`.
+The separate export script uses the output path in the talk's `package.json`.
+
+**Verify**: After starting the dev server, inspect the affected slides at the URL
+printed by Slidev (normally `http://localhost:3030`). After exporting, check the
+output path configured in the talk's `package.json`. Preserve Slidev separators
+and frontmatter; the repository formatter skips `slides.md` and `pages/*.md`.
 
 ## Basic Syntax
 
@@ -148,7 +192,9 @@ Presenter notes go here
 | OG image       | `seoMeta.ogImage` or `og-image.png` | [build-og-image](references/build-og-image.md)           |
 | SEO tags       | `seoMeta:`                          | [build-seo-meta](references/build-seo-meta.md)           |
 
-**Export prerequisite**: `pnpm add -D playwright-chromium` is required for PDF/PPTX/PNG export. If export fails with a browser error, install this dependency first.
+**Export prerequisite**: This repository already declares `playwright-chromium`.
+Run `bun install` to install dependencies. If Chromium is missing, install it
+with `bunx playwright install chromium` before retrying the export.
 
 ### Editor & Tools
 

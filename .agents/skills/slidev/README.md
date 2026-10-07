@@ -1,18 +1,25 @@
-# Slidev Skills for Claude Code
+# Slidev Agent Skill
 
-Agent skills that help Claude Code understand and work with [Slidev](https://sli.dev) presentations.
+Shared repository skill for creating and editing [Slidev](https://sli.dev) presentations.
 
-## Installation
+## Location
 
-```bash
-npx skills add slidevjs/slidev
+```text
+.agents/skills/slidev/
+├── SKILL.md       # Skill entry point and repository workflow
+└── references/    # Slidev feature references
 ```
 
-This will add the Slidev skill to your Claude Code configuration.
+The skill is checked into this repository. Use [SKILL.md](SKILL.md) as the entry
+point and follow [AGENTS.md](../../../AGENTS.md) for repository conventions.
+
+For deck authoring and visual quality, pair it with
+[slidev-best-practices](../slidev-best-practices/SKILL.md). See the
+[skill inventory](../README.md) for upstream versions and design companion skills.
 
 ## What's Included
 
-The Slidev skill provides Claude Code with knowledge about:
+The Slidev skill covers:
 
 - **Core Syntax** - Markdown syntax, slide separators, frontmatter
 - **Animations** - Click animations, transitions, motion effects
@@ -24,7 +31,7 @@ The Slidev skill provides Claude Code with knowledge about:
 
 ## Usage
 
-Once installed, Claude Code will automatically use Slidev knowledge when:
+Agents can use this skill when:
 
 - Creating new presentations
 - Adding slides with code examples

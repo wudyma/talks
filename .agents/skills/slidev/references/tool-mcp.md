@@ -15,10 +15,8 @@ With a running dev server (streamable HTTP):
 http://localhost:<port>/__mcp
 ```
 
-```bash
-# e.g. for Claude Code
-claude mcp add --transport http slidev http://localhost:3030/__mcp
-```
+Configure the HTTP URL in the MCP client used by your agent. Use the actual
+port printed by the dev server.
 
 Standalone over stdio (no dev server, operates on files directly):
 
