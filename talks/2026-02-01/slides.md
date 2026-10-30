@@ -177,7 +177,7 @@ $\Gamma_{\pm} := \{(r,\Omega) \mid r\in\partial D,\;\Omega\in\mathbb{S}^{d-1},\;
   variant="error"
   icon="i-ph-cube-duotone"
   size="lg"
-  :items="[
+  :list-items="[
     '6维相空间: $(x,y,z,\\Omega_x,\\Omega_y,\\Omega_z)$',
     '网格点数呈指数增长 $N^6$',
     '难以承受的内存和存储需求'
@@ -191,7 +191,7 @@ $\Gamma_{\pm} := \{(r,\Omega) \mid r\in\partial D,\;\Omega\in\mathbb{S}^{d-1},\;
   variant="warning"
   icon="i-ph-arrows-merge-duotone"
   size="lg"
-  :items="[
+  :list-items="[
     '在离散层面保持守恒律',
     '处理非线性玻尔兹曼型算子',
     '避免虚假射线效应和扩散'
@@ -204,7 +204,7 @@ $\Gamma_{\pm} := \{(r,\Omega) \mid r\in\partial D,\;\Omega\in\mathbb{S}^{d-1},\;
   variant="tech"
   icon="i-ph-scales-duotone"
   size="lg"
-  :items="[
+  :list-items="[
     '刚性参数: $\\varepsilon = \\ell/L \\ll 1$',
     '设计渐近保持格式',
     '耦合输运 ↔ 扩散转变'
@@ -327,7 +327,7 @@ layout: center
     variant="success"
     icon="i-ph-fediverse-logo-duotone"
     size="md"
-    :items="[
+    :list-items="[
       '近似解: PINNs, DeepRitz 等',
       '近似解算子: DeepONet, FNO 等',
       '近似 PDE (从方程到解): PDEFormer-1/2'
@@ -341,7 +341,7 @@ layout: center
     variant="error"
     icon="i-carbon:constraint"
     size="md"
-    :items="[
+    :list-items="[
       '数据：纯监督或作为先验信息',
       '模型：需要物理信息 (PDE) (如 PINNs, DeepRitz, DeepGalerkin)',
       '其他：初值、边界、守恒、对称性等'
@@ -355,7 +355,7 @@ layout: center
     variant="warning"
     icon="i-streamline:graph-arrow-decrease"
     size="md"
-    :items="[
+    :list-items="[
       '在参数空间上最小化损失，通常使用 SGD, Adams, LBFGS 等',
     ]"
   />
@@ -398,7 +398,7 @@ glow: left
   <div class="text-sm space-y-2">
     <list
       variant="primary"
-      :items="[
+      :list-items="[
         '基于注意力的 Transformer',
         '分辨率无关',
         '参数到解的映射'
@@ -436,7 +436,7 @@ glow: left
       <div class="text-sm space-y-2">
         <List
           variant="primary"
-          :items="[
+          :list-items="[
             'Delta 函数数据',
             '端到端预训练',
             '零样本泛化'
@@ -606,7 +606,7 @@ $$
 <List
   variant="warning"
   enable-latex="true"
-  :items="[
+  :list-items="[
     '$I_{-}(r,\\Omega)$: 入射边界函数',
     '$\\mu_t(r)$: 总截面',
     '$\\mu_s(r)$: 散射截面',
@@ -857,7 +857,7 @@ $$
 <div text-base mt-4>
 <List
   variant="secondary"
-  :items="[
+  :list-items="[
     '$\\mathcal{J}$, $\\mathcal{L}$: 衰减模块（沿特征线的注意力）',
     '$\\mathcal{S}$: 散射模块'
   ]"
@@ -1089,7 +1089,7 @@ $$
     variant="primary"
     icon="i-ph-tree-structure-duotone"
     size="md"
-    :items="[
+    :list-items="[
       '将 $\\mu_t(r)$ 和 $\\mu_s(r)$ 编码为光学深度网络',
       '沿特征线的注意力',
     ]"
@@ -1104,7 +1104,7 @@ $$
     variant="secondary"
     icon="i-ph-tree-structure-duotone"
     size="md"
-    :items="[
+    :list-items="[
       '编码 $' + 'p(\\Omega,\\Omega^*)$',
       '捕捉各向异性散射'
     ]"
@@ -1133,7 +1133,7 @@ $$
 
 <div flex="~ col gap-2" ml--2>
 
-<List variant="secondary" :items="['我们构建由 Delta 函数组成的训练数据集']" />
+<List variant="secondary" :list-items="['我们构建由 Delta 函数组成的训练数据集']" />
 <div text-on-surface>
 
 $$
@@ -1142,7 +1142,7 @@ I^\sigma_{-}(r, \Omega; r', \Omega') =
 $$
 
 </div>
-<List variant="secondary" :items="['实际上，我们使用 Delta 函数的平滑版本作为边界函数']" />
+<List variant="secondary" :list-items="['实际上，我们使用 Delta 函数的平滑版本作为边界函数']" />
 <div text-on-surface>
 
 $$
@@ -1221,8 +1221,8 @@ $$
 
 <div flex="~ col gap-2" ml--2 mt-3>
 
-<List variant="success" :items="['Adam 优化器', '余弦退火学习率调度']" />
-<List variant="success" :items="['MSE 损失']" />
+<List variant="success" :list-items="['Adam 优化器', '余弦退火学习率调度']" />
+<List variant="success" :list-items="['MSE 损失']" />
 
 <div text-on-surface ml-2>
 <div equation-block>
@@ -1487,7 +1487,7 @@ class: pt-4
   variant="tech"
   icon="i-ph-arrows-out-duotone"
   size="md"
-  :items="[
+  :list-items="[
     '不同的边界条件',
     '不同的截面和散射核'
   ]"
@@ -1499,7 +1499,7 @@ class: pt-4
   variant="secondary"
   icon="i-ph-swap-duotone"
   size="md"
-  :items="[
+  :list-items="[
     '在 Delta 边界上预训练',
     '高精度 (< 5% 误差)'
   ]"
@@ -1755,7 +1755,7 @@ $$
   variant="error"
   icon="i-ph-warning-duotone"
   size="lg"
-  :items="[
+  :list-items="[
     '无能量(频率)依赖',
     '稳态解',
     '大量预训练数据',
@@ -1769,7 +1769,7 @@ $$
   variant="success"
   icon="i-ph-rocket-launch-duotone"
   size="lg"
-  :items="[
+  :list-items="[
     '3D 扩展',
     '时间依赖问题',
     '多物理场耦合',

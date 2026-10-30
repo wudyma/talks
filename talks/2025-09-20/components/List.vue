@@ -2,7 +2,7 @@
 import { nextTick, onMounted, ref, watch } from "vue";
 
 interface Props {
-  items?: string[];
+  listItems?: string[];
   variant?:
     | "primary"
     | "secondary"
@@ -197,7 +197,7 @@ onMounted(() => {
 });
 
 // Re-process math when props change
-watch([() => props.items], () => {
+watch([() => props.listItems], () => {
   processMath();
 });
 
@@ -216,9 +216,9 @@ const dotClasses = {
 </script>
 
 <template>
-  <ul v-if="items && items.length" ref="listRef" class="space-y-2 ml--4">
+  <ul v-if="listItems && listItems.length" ref="listRef" class="space-y-2 ml--4">
     <li
-      v-for="(item, index) in items"
+      v-for="(item, index) in listItems"
       :key="index"
       class="flex flex-gap-4 items-center"
     >
@@ -237,7 +237,7 @@ const dotClasses = {
   </ul>
 
   <!-- Default slot for custom content -->
-  <div v-if="!items || !items.length">
+  <div v-if="!listItems || !listItems.length">
     <slot />
   </div>
 </template>

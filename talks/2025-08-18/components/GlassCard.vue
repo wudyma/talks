@@ -4,7 +4,7 @@ import { nextTick, onMounted, ref, watch } from "vue";
 interface Props {
   title?: string;
   subtitle?: string;
-  items?: string[];
+  listItems?: string[];
   variant?:
     | "primary"
     | "secondary"
@@ -202,7 +202,7 @@ onMounted(() => {
 });
 
 // Re-process math when props change
-watch([() => props.title, () => props.subtitle, () => props.items], () => {
+watch([() => props.title, () => props.subtitle, () => props.listItems], () => {
   processMath();
 });
 
@@ -337,14 +337,14 @@ const dotClasses = {
 
     <!-- List Items -->
     <ul
-      v-if="items && items.length"
+      v-if="listItems && listItems.length"
       class="space-y-2 ml--4"
       :class="[
         size === 'lg' ? 'space-y-3' : size === 'sm' ? 'space-y-1' : 'space-y-2',
       ]"
     >
       <li
-        v-for="(item, index) in items"
+        v-for="(item, index) in listItems"
         :key="index"
         class="flex flex-gap-4 items-center"
         :class="[
@@ -376,7 +376,7 @@ const dotClasses = {
     </ul>
 
     <!-- Default slot for custom content -->
-    <div v-if="!items || !items.length">
+    <div v-if="!listItems || !listItems.length">
       <slot />
     </div>
   </div>

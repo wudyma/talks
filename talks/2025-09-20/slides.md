@@ -207,7 +207,7 @@ glow: right
   variant="error"
   icon="i-ph-cube-duotone"
   size="md"
-  :items="[
+  :list-items="[
     '6D phase space: $(x,y,z,\\Omega_x,\\Omega_y,\\Omega_z)$',
     'Grid points scale exponentially as $N^6$',
     'Intractable memory and storage needs'
@@ -221,7 +221,7 @@ glow: right
   variant="warning"
   icon="i-ph-arrows-merge-duotone"
   size="md"
-  :items="[
+  :list-items="[
     'Preserve conservation laws at discrete level',
     'Handle nonlinear Boltzmann-type operators',
     'Avoid spurious ray effects and diffusion'
@@ -234,7 +234,7 @@ glow: right
   variant="tech"
   icon="i-ph-scales-duotone"
   size="md"
-  :items="[
+  :list-items="[
     'Stiffness parameter: $\\varepsilon = \\ell/L \\ll 1$',
     'Design asymptotic-preserving schemes',
     'Couple transport ↔ diffusion transitions'
@@ -360,7 +360,7 @@ glow: right
     variant="success"
     icon="i-ph-brain-duotone"
     size="md"
-    :items="[
+    :list-items="[
       'Approximate solution: PINNs, DeepRitz, etc.',
       'Approximate solution operator: DeepONet, FNO, etc.',
       'Approximate PDE (from equations to solutions): PDEFormer-1/2'
@@ -374,7 +374,7 @@ glow: right
     variant="error"
     icon="i-carbon:constraint"
     size="md"
-    :items="[
+    :list-items="[
       'Data: pure supervised or as a priori information',
       'Model: physical information (PDE) needed (e.g., PINNs, DeepRitz, DeepGalerkin)',
       'Other: IC, BC, conservation, symmetry, etc.'
@@ -388,7 +388,7 @@ glow: right
     variant="warning"
     icon="i-streamline:graph-arrow-decrease"
     size="md"
-    :items="[
+    :list-items="[
       'Minimize loss over the parameter space, usually SGD, Adams, LBFGS, etc.',
     ]"
   />
@@ -429,7 +429,7 @@ glow: left
   <div class="text-sm space-y-2">
     <list
       variant="primary"
-      :items="[
+      :list-items="[
         'Attention-based transformer',
         'Resolution-invariant',
         'Parameter-to-solution mapping'
@@ -467,7 +467,7 @@ glow: left
       <div class="text-sm space-y-2">
         <List
           variant="primary"
-          :items="[
+          :list-items="[
             'Delta function data',
             'End-to-end pre-training',
             'Zero-shot generalization'
@@ -637,7 +637,7 @@ $$
 <List
   variant="warning"
   enable-latex="true"
-  :items="[
+  :list-items="[
     '$I_{-}(r,\\Omega)$: incoming boundary function',
     '$\\mu_t(r)$: total cross section',
     '$\\mu_s(r)$: scattering cross section',
@@ -886,7 +886,7 @@ $$
 <div text-base mt-4>
 <List
   variant="secondary"
-  :items="[
+  :list-items="[
     '$\\mathcal{J}$, $\\mathcal{L}$: attenuation module (attention along characteristic)',
     '$\\mathcal{S}$: scattering module'
   ]"
@@ -1116,7 +1116,7 @@ Recap
     variant="primary"
     icon="i-ph-tree-structure-duotone"
     size="md"
-    :items="[
+    :list-items="[
       'Encodes $\\mu_t(r)$ and $\\mu_s(r)$ as optical depth network',
       'Attention along characteristic',
     ]"
@@ -1131,7 +1131,7 @@ Recap
     variant="secondary"
     icon="i-ph-map-pin-duotone"
     size="md"
-    :items="[
+    :list-items="[
       'Encodes $' + 'p(\\Omega,\\Omega^*)$',
       'Capture anisotropic scattering'
     ]"
@@ -1160,7 +1160,7 @@ Trained with delta-like function
 
 <div flex="~ col gap-2" ml--2>
 
-<List variant="secondary" :items="['we construct the training dataset consists of delta functions']" />
+<List variant="secondary" :list-items="['we construct the training dataset consists of delta functions']" />
 <div text-on-surface>
 
 $$
@@ -1169,7 +1169,7 @@ I^{\delta}_{-}(r, \Omega; r', \Omega') =
 $$
 
 </div>
-<List variant="secondary" :items="['In practice, we use smoothed version of delta functions as the boundary functions']" />
+<List variant="secondary" :list-items="['In practice, we use smoothed version of delta functions as the boundary functions']" />
 <div text-on-surface>
 
 $$
@@ -1217,8 +1217,8 @@ $$
 
 <div flex="~ col gap-2" ml--2 mt-3>
 
-<List variant="success" :items="['Adam optimizer', 'Cosine annealing learning rate schedule']" />
-<List variant="success" :items="['MSE loss']" />
+<List variant="success" :list-items="['Adam optimizer', 'Cosine annealing learning rate schedule']" />
+<List variant="success" :list-items="['MSE loss']" />
 
 <div text-on-surface ml-2>
 <div equation-block>
@@ -1484,7 +1484,7 @@ Same distribution as training dataset
   variant="tech"
   icon="i-ph-arrows-out-duotone"
   size="md"
-  :items="[
+  :list-items="[
     'Different boundary conditions',
     'Different cross-sections and scattering kernels'
   ]"
@@ -1496,7 +1496,7 @@ Same distribution as training dataset
   variant="secondary"
   icon="i-ph-swap-duotone"
   size="md"
-  :items="[
+  :list-items="[
     'Pre-trained on delta boundary',
     'High accuracy (< 5% error)'
   ]"
@@ -1730,7 +1730,7 @@ $$
   variant="error"
   icon="i-ph-warning-duotone"
   size="md"
-  :items="[
+  :list-items="[
     '2D problems only',
     'Steady-state solutions',
     'Substantial pre-training data',
@@ -1744,7 +1744,7 @@ $$
   variant="success"
   icon="i-ph-rocket-launch-duotone"
   size="md"
-  :items="[
+  :list-items="[
     '3D extension',
     'Time-dependent problems',
     'Multi-physics coupling',
